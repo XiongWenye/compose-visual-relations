@@ -237,6 +237,7 @@ if __name__ == '__main__':
 	parser.add_argument("--batch_size", type=int, default=32)
 
 	parser.add_argument("--dataset", choices=['clevr', 'igibson'])
+	parser.add_argument("--data_path", type=str, required=True)
 
 	parser.add_argument("--checkpoint_dir", type=str, default='./')
 

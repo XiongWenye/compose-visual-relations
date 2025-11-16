@@ -391,7 +391,7 @@ def main_single(gpu, FLAGS):
         FLAGS.gpus = FLAGS_OLD.gpus
         FLAGS.node_rank = FLAGS_OLD.node_rank
         FLAGS.master_addr = FLAGS_OLD.master_addr
-        FLAGS.train = FLAGS_OLD.train
+       #FLAGS.train = FLAGS_OLD.train
         FLAGS.num_steps = FLAGS_OLD.num_steps
         FLAGS.step_lr = FLAGS_OLD.step_lr
         FLAGS.batch_size = FLAGS_OLD.batch_size
@@ -401,7 +401,7 @@ def main_single(gpu, FLAGS):
 
         for key in dir(FLAGS):
             if "__" not in key:
-                FLAGS_OLD[key] = getattr(FLAGS, key)
+                setattr(FLAGS_OLD, key, getattr(FLAGS, key))
 
         FLAGS = FLAGS_OLD
 

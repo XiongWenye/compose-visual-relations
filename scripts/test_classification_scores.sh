@@ -1,9 +1,9 @@
-output_folder='./'
-data_folder='./dataset'
+output_folder='./outputs'
+data_folder='./data'
 
-for dataset in "igibson" "clevr"
+for dataset in "clevr"
   do
-    for num_rels in 1 2 3
+    for num_rels in 1
       do
         FILEPATH="${output_folder}/${dataset}"
         command="python classification_scores.py --dataset ${dataset} --checkpoint_dir ./binary_classifier/ \
